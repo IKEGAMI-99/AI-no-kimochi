@@ -1,11 +1,118 @@
-	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:376)
-	at org.gradle.execution.plan.DefaultPlanExecutor.process(DefaultPlanExecutor.java:111)
-	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph.executeWithServices(DefaultTaskExecutionGraph.java:138)
-	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph.execute(DefaultTaskExecutionGraph.java:123)
-	at org.gradle.execution.SelectedTaskExecutionAction.execute(SelectedTaskExecutionAction.java:35)
-	at org.gradle.execution.DryRunBuildExecutionAction.execute(DryRunBuildExecutionAction.java:51)
-	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor$ExecuteTasks.call(BuildOperationFiringBuildWorkerExecutor.java:54)
-	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor$ExecuteTasks.call(BuildOperationFiringBuildWorkerExecutor.java:43)
+Starting a Gradle Daemon (subsequent builds will be faster)
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :app:generateDebugResValues
+> Task :app:checkDebugAarMetadata
+> Task :app:mapDebugSourceSetPaths
+> Task :app:generateDebugResources
+> Task :app:packageDebugResources
+> Task :app:mergeDebugResources
+> Task :app:createDebugCompatibleScreenManifests
+> Task :app:extractDeepLinksDebug
+> Task :app:parseDebugLocalResources
+> Task :app:processDebugMainManifest
+> Task :app:processDebugManifest
+> Task :app:javaPreCompileDebug
+> Task :app:mergeDebugShaders
+> Task :app:compileDebugShaders NO-SOURCE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :app:mergeDebugAssets
+> Task :app:processDebugManifestForPackage
+> Task :app:compressDebugAssets
+> Task :app:desugarDebugFileDependencies
+> Task :app:mergeDebugJniLibFolders
+> Task :app:checkDebugDuplicateClasses
+> Task :app:mergeDebugNativeLibs
+> Task :app:processDebugResources
+> Task :app:mergeLibDexDebug
+
+> Task :app:stripDebugDebugSymbols
+Unable to strip the following libraries, packaging them as they are: libandroidx.graphics.path.so.
+
+> Task :app:validateSigningDebug
+> Task :app:writeDebugAppMetadata
+> Task :app:writeDebugSigningConfigVersions
+> Task :app:mergeExtDexDebug
+
+> Task :app:compileDebugKotlin FAILED
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/AiNoKimochiActivity.kt:102:20 Redeclaration:
+data class ToyToken : Any
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/AiNoKimochiActivity.kt:109:20 Redeclaration:
+data class Candidate : Any
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/MainActivity.kt:122:38 Cannot access 'data class ToyToken : Any': it is private in file.
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/MainActivity.kt:155:13 Cannot access 'data class ToyToken : Any': it is private in file.
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/MainActivity.kt:159:32 Cannot access 'data class ToyToken : Any': it is private in file.
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/MainActivity.kt:163:55 Cannot access 'data class ToyToken : Any': it is private in file.
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/MainActivity.kt:163:67 Cannot access 'data class ToyToken : Any': it is private in file.
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/MainActivity.kt:164:33 Cannot access 'data class ToyToken : Any': it is private in file.
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/MainActivity.kt:183:28 Cannot access 'data class Candidate : Any': it is private in file.
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/MainActivity.kt:184:9 Cannot access 'data class Candidate : Any': it is private in file.
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/MainActivity.kt:185:9 Cannot access 'data class Candidate : Any': it is private in file.
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/MainActivity.kt:186:9 Cannot access 'data class Candidate : Any': it is private in file.
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/MainActivity.kt:187:9 Cannot access 'data class Candidate : Any': it is private in file.
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/MainActivity.kt:188:9 Cannot access 'data class Candidate : Any': it is private in file.
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/MainActivity.kt:191:47 Cannot access 'data class Candidate : Any': it is private in file.
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/MainActivity.kt:194:36 Cannot access 'data class Candidate : Any': it is private in file.
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/MainActivity.kt:299:35 Cannot access 'data class Candidate : Any': it is private in file.
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/MainActivity.kt:299:62 Cannot access 'data class Candidate : Any': it is private in file.
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/MainActivity.kt:370:18 Cannot access 'data class ToyToken : Any': it is private in file.
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/MainActivity.kt:428:37 Cannot access 'data class ToyToken : Any': it is private in file.
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/MainActivity.kt:445:35 Cannot access 'data class ToyToken : Any': it is private in file.
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/MainActivity.kt:447:28 Cannot access 'data class ToyToken : Any': it is private in file.
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/MainActivity.kt:448:48 Cannot access 'data class ToyToken : Any': it is private in file.
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/MainActivity.kt:455:41 Cannot access 'data class ToyToken : Any': it is private in file.
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/MainActivity.kt:461:23 Cannot access 'data class ToyToken : Any': it is private in file.
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/MainActivity.kt:461:36 Cannot access 'data class ToyToken : Any': it is private in file.
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/MainActivity.kt:469:42 Cannot access 'data class ToyToken : Any': it is private in file.
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/MainActivity.kt:481:33 Cannot access 'data class ToyToken : Any': it is private in file.
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/MainActivity.kt:482:33 Cannot access 'data class ToyToken : Any': it is private in file.
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/MainActivity.kt:483:43 Cannot access 'data class ToyToken : Any': it is private in file.
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/MainActivity.kt:490:23 Cannot access 'data class ToyToken : Any': it is private in file.
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/MainActivity.kt:500:40 Cannot access 'data class ToyToken : Any': it is private in file.
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/MainActivity.kt:504:28 Cannot access 'data class ToyToken : Any': it is private in file.
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/MainActivity.kt:527:35 Cannot access 'data class ToyToken : Any': it is private in file.
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/MainActivity.kt:539:85 Cannot access 'data class ToyToken : Any': it is private in file.
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/MainActivity.kt:553:24 Cannot access 'data class ToyToken : Any': it is private in file.
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/MainActivity.kt:559:41 Cannot access 'data class ToyToken : Any': it is private in file.
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/MainActivity.kt:574:38 Cannot access 'data class ToyToken : Any': it is private in file.
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/MainActivity.kt:579:42 Cannot access 'data class ToyToken : Any': it is private in file.
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/MainActivity.kt:609:42 Cannot access 'data class ToyToken : Any': it is private in file.
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/MainActivity.kt:614:35 Cannot access 'data class ToyToken : Any': it is private in file.
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/MainActivity.kt:634:37 Cannot access 'data class ToyToken : Any': it is private in file.
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/MainActivity.kt:670:34 Cannot access 'data class Candidate : Any': it is private in file.
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/MainActivity.kt:670:99 Cannot access 'data class Candidate : Any': it is private in file.
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/MainActivity.kt:709:40 Cannot access 'data class ToyToken : Any': it is private in file.
+e: file:///home/runner/work/AI-no-kimochi/AI-no-kimochi/app/src/main/java/com/aikimochi/app/MainActivity.kt:724:28 Cannot access 'data class ToyToken : Any': it is private in file.
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/android_build-1787536432744.json
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:compileDebugKotlin'.
+> A failure occurred while executing org.jetbrains.kotlin.compilerRunner.GradleCompilerRunnerWithWorkers$GradleKotlinCompilerWorkAction
+   > Compilation error. See log for more details
+
+* Try:
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+* Exception is:
+org.gradle.api.tasks.TaskExecutionException: Execution failed for task ':app:compileDebugKotlin'.
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.lambda$executeIfValid$1(ExecuteActionsTaskExecuter.java:130)
+	at org.gradle.internal.Try$Failure.ifSuccessfulOrElse(Try.java:293)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeIfValid(ExecuteActionsTaskExecuter.java:128)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute(ExecuteActionsTaskExecuter.java:116)
+	at org.gradle.api.internal.tasks.execution.FinalizePropertiesTaskExecuter.execute(FinalizePropertiesTaskExecuter.java:46)
+	at org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter.execute(ResolveTaskExecutionModeExecuter.java:51)
+	at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:57)
+	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:74)
+	at org.gradle.api.internal.tasks.execution.CatchExceptionTaskExecuter.execute(CatchExceptionTaskExecuter.java:36)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.executeTask(EventFiringTaskExecuter.java:77)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:55)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:52)
 	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:209)
 	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
@@ -13,21 +120,16 @@
 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:166)
 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
 	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
-	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor.execute(BuildOperationFiringBuildWorkerExecutor.java:40)
-	at org.gradle.internal.build.DefaultBuildLifecycleController.lambda$executeTasks$10(DefaultBuildLifecycleController.java:313)
-	at org.gradle.internal.model.StateTransitionController.doTransition(StateTransitionController.java:266)
-	at org.gradle.internal.model.StateTransitionController.lambda$tryTransition$8(StateTransitionController.java:177)
-	at org.gradle.internal.work.DefaultSynchronizer.withLock(DefaultSynchronizer.java:44)
-	at org.gradle.internal.model.StateTransitionController.tryTransition(StateTransitionController.java:177)
-	at org.gradle.internal.build.DefaultBuildLifecycleController.executeTasks(DefaultBuildLifecycleController.java:304)
-	at org.gradle.internal.build.DefaultBuildWorkGraphController$DefaultBuildWorkGraph.runWork(DefaultBuildWorkGraphController.java:220)
-	at org.gradle.internal.work.DefaultWorkerLeaseService.withLocks(DefaultWorkerLeaseService.java:267)
-	at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:131)
-	at org.gradle.composite.internal.DefaultBuildController.doRun(DefaultBuildController.java:181)
-	at org.gradle.composite.internal.DefaultBuildController.access$000(DefaultBuildController.java:50)
-	at org.gradle.composite.internal.DefaultBuildController$BuildOpRunnable.lambda$run$0(DefaultBuildController.java:198)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter.execute(EventFiringTaskExecuter.java:52)
+	at org.gradle.execution.plan.LocalTaskNodeExecutor.execute(LocalTaskNodeExecutor.java:42)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:331)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:318)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.lambda$execute$0(DefaultTaskExecutionGraph.java:314)
 	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOperationRef.java:85)
-	at org.gradle.composite.internal.DefaultBuildController$BuildOpRunnable.run(DefaultBuildController.java:198)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:314)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:303)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:459)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:376)
 	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
 	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
 Caused by: org.gradle.workers.internal.DefaultWorkerExecutor$WorkExecutionException: A failure occurred while executing org.jetbrains.kotlin.compilerRunner.GradleCompilerRunnerWithWorkers$GradleKotlinCompilerWorkAction
@@ -152,35 +254,6 @@ Caused by: org.gradle.workers.internal.DefaultWorkerExecutor$WorkExecutionExcept
 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:303)
 	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:459)
 	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:376)
-	at org.gradle.execution.plan.DefaultPlanExecutor.process(DefaultPlanExecutor.java:111)
-	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph.executeWithServices(DefaultTaskExecutionGraph.java:138)
-	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph.execute(DefaultTaskExecutionGraph.java:123)
-	at org.gradle.execution.SelectedTaskExecutionAction.execute(SelectedTaskExecutionAction.java:35)
-	at org.gradle.execution.DryRunBuildExecutionAction.execute(DryRunBuildExecutionAction.java:51)
-	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor$ExecuteTasks.call(BuildOperationFiringBuildWorkerExecutor.java:54)
-	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor$ExecuteTasks.call(BuildOperationFiringBuildWorkerExecutor.java:43)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:209)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:166)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
-	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor.execute(BuildOperationFiringBuildWorkerExecutor.java:40)
-	at org.gradle.internal.build.DefaultBuildLifecycleController.lambda$executeTasks$10(DefaultBuildLifecycleController.java:313)
-	at org.gradle.internal.model.StateTransitionController.doTransition(StateTransitionController.java:266)
-	at org.gradle.internal.model.StateTransitionController.lambda$tryTransition$8(StateTransitionController.java:177)
-	at org.gradle.internal.work.DefaultSynchronizer.withLock(DefaultSynchronizer.java:44)
-	at org.gradle.internal.model.StateTransitionController.tryTransition(StateTransitionController.java:177)
-	at org.gradle.internal.build.DefaultBuildLifecycleController.executeTasks(DefaultBuildLifecycleController.java:304)
-	at org.gradle.internal.build.DefaultBuildWorkGraphController$DefaultBuildWorkGraph.runWork(DefaultBuildWorkGraphController.java:220)
-	at org.gradle.internal.work.DefaultWorkerLeaseService.withLocks(DefaultWorkerLeaseService.java:267)
-	at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:131)
-	at org.gradle.composite.internal.DefaultBuildController.doRun(DefaultBuildController.java:181)
-	at org.gradle.composite.internal.DefaultBuildController.access$000(DefaultBuildController.java:50)
-	at org.gradle.composite.internal.DefaultBuildController$BuildOpRunnable.lambda$run$0(DefaultBuildController.java:198)
-	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOperationRef.java:85)
-	at org.gradle.composite.internal.DefaultBuildController$BuildOpRunnable.run(DefaultBuildController.java:198)
 	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
 	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
 Caused by: org.jetbrains.kotlin.gradle.tasks.CompilationErrorException: Compilation error. See log for more details
@@ -216,5 +289,5 @@ Caused by: org.jetbrains.kotlin.gradle.tasks.CompilationErrorException: Compilat
 	... 2 more
 
 
-BUILD FAILED in 26s
+BUILD FAILED in 23s
 28 actionable tasks: 28 executed
