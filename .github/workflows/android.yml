@@ -34,23 +34,23 @@ jobs:
       - name: Prepare direct-download APK
         run: |
           mkdir -p dist
-          cp app/build/outputs/apk/debug/app-debug.apk dist/AI-no-kimochi-v0.1.0-debug.apk
+          cp app/build/outputs/apk/debug/app-debug.apk dist/AI-no-kimochi-v0.2.0-debug.apk
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
-          name: AI-no-kimochi-v0.1.0-debug
-          path: dist/AI-no-kimochi-v0.1.0-debug.apk
+          name: AI-no-kimochi-v0.2.0-debug
+          path: dist/AI-no-kimochi-v0.2.0-debug.apk
           if-no-files-found: error
 
       - name: Publish APK to repository
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add dist/AI-no-kimochi-v0.1.0-debug.apk
+          git add dist/AI-no-kimochi-v0.2.0-debug.apk
           if git diff --cached --quiet; then
             echo "APK unchanged"
           else
-            git commit -m "build: publish v0.1.0 debug APK [skip ci]"
+            git commit -m "build: publish v0.2.0 debug APK [skip ci]"
             git push
           fi
