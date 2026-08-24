@@ -1,0 +1,1 @@
+Build AI-no-kimochi v0.2.1 via pull_request workflow.
