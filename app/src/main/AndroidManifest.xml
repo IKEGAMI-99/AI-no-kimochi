@@ -6,7 +6,7 @@
         android:supportsRtl="true"
         android:theme="@android:style/Theme.Material.NoActionBar">
         <activity
-            android:name=".AiNoKimochiActivityV30"
+            android:name=".AiNoKimochiActivityV31"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
