@@ -1,54 +1,52 @@
 # AIのキモチ
 
-**Version 0.3.0**
+**Version 0.3.1**
 
-Transformer / LLM が文章を生成するまでの流れを、アニメーションと操作で体感する Android 学習アプリです。
+Transformer / LLM が文章を生成するまでの内部処理を、操作しながら理解する Android 学習アプリです。
 
-## コンセプト
-
-初心者モードでも内部処理の流れが飛ばないよう、v0.3.0 では学習フローを7段階に整理しました。
+## 学習フロー
 
 `文章 → Token → Embedding → Q/K/V → Attention → FFN → 次Token予測`
 
-Advanced モードでは数式や教育用ベクトルも表示します。
+v0.3.1 では簡易/詳細モードの切り替えを廃止し、数式・Token ID・教育用ベクトル・Logitなどを常に表示する詳細学習モードへ一本化しました。
 
-## v0.3.0 の主な変更
+## v0.3.1 の主な変更
 
-- Q / K / V を独立した学習ステップとして追加
-  - Query = 「何を探している？」
-  - Key = 「私はどんな情報？」
-  - Value = 「実際に渡す中身」
-- 同じEmbeddingからQ / K / Vへ3方向に変換されることを図解
-- Advancedモードで `Q = XWq` / `K = XWk` / `V = XWv` と教育用ベクトルを表示
-- Attention画面で「QとKを比較してWeightを作り、その重みでVを混ぜる」流れを明記
-- FFN (Feed Forward Network) を独立した学習ステップとして追加
-- FFNを `Linear → Activation → Linear` の流れで図解
-- AttentionとFFNの役割の違いを明示
-  - Attention = 他Tokenから情報を集める
-  - FFN = Tokenごとに情報を加工する
-- Advancedモードで代表的なFFN式を表示
-- PLAY / PAUSE を廃止
-- 下部ナビゲーションを BACK / NEXT のみに整理
+- Beginner / Advanced 切り替えを廃止し、詳細モードのみへ統一
+- 各ステップの説明文を大幅に増量
+- 「なぜこの処理が必要か」「次の処理とどうつながるか」を追加説明
+- `次に何が起きる？` カードを各ステップ内容の一番下へ移動
+- `statusBarsPadding()` と追加上マージンで、ステータスバーや画面上部UIとの重なりを改善
+- navigation bar 側にも安全マージンを追加
+- Token ID / Embeddingベクトル / Q・K・Vベクトル / Attention式 / FFN式 / Logit を常時表示
+- PLAY / PAUSE は引き続き廃止、操作は BACK / NEXT のみ
 
-## 既存機能
+## 主な学習内容
 
-- 学習用の例文選択式
-- 例文4種類
-  - 猫はソファで寝ている
-  - 私は歯医者です
-  - 犬がボールを追いかける
-  - AIは文章を生成する
-- Token分割表示
-- Embeddingの点にTokenラベルを直接表示
-- Embeddingの点・ラベル・Tokenカードを同じ色で統一
-- ベクトル距離の具体例
-  - 近い例: リンゴ ↔ 梨
-  - 遠い例: リンゴ ↔ バス
-- Self-Attentionで自分自身も参照することを可視化
-- Attention Weightの線・割合バー表示
-- Temperature操作と次Token候補の確率表示
-- Beginner / Advanced 切替
-- 完全オフライン
+### Tokenization
+文章をTokenへ分割し、Token IDとして扱う流れを表示します。
+
+### Embedding
+Tokenを意味的な関係を持つベクトルへ変換します。点とTokenラベルを同じ色で対応させ、近い例 `リンゴ ↔ 梨`、遠い例 `リンゴ ↔ バス` も表示します。
+
+### Q / K / V
+同じEmbeddingを別の学習済み行列で変換し、Query / Key / Value の3つの役割を作ることを図解します。
+
+### Self-Attention
+QueryとKeyからAttention Weightを作り、その重みでValueを混ぜる流れを表示します。自分自身へのAttentionも可視化します。
+
+### FFN
+Attentionで集めた情報をTokenごとに `Linear → Activation → Linear` で加工する流れを表示します。
+
+### Logits / Sampling
+次Token候補のLogit・確率分布・Temperature・Samplingを表示し、文章が1Tokenずつ生成される仕組みを説明します。
+
+## 例文
+
+- 猫はソファで寝ている
+- 私は歯医者です
+- 犬がボールを追いかける
+- AIは文章を生成する
 
 ## 技術構成
 
@@ -58,6 +56,7 @@ Advanced モードでは数式や教育用ベクトルも表示します。
 - Android minSdk 26
 - targetSdk 35
 - Java 17
+- 完全オフライン
 
 ## Toy Modelについて
 
@@ -66,10 +65,6 @@ Advanced モードでは数式や教育用ベクトルも表示します。
 Token ID、Embedding、Q/K/V、Attention Weight、FFN内部値、Logits などには教育用の疑似値を含みます。概念の流れを理解するためのシミュレーションであり、実在モデルの内部値をそのまま再現するものではありません。
 
 ## ビルド
-
-Android Studio でこのリポジトリを開き、`app` を実行してください。
-
-CLI:
 
 ```bash
 gradle :app:assembleDebug
@@ -83,11 +78,11 @@ app/build/outputs/apk/debug/app-debug.apk
 
 ## APK
 
-### v0.3.0 直接ダウンロード
+### v0.3.1 直接ダウンロード
 
-[AI-no-kimochi v0.3.0 debug APK](https://raw.githubusercontent.com/IKEGAMI-99/AI-no-kimochi/main/dist/AI-no-kimochi-v0.3.0-debug.apk)
+[AI-no-kimochi v0.3.1 debug APK](https://raw.githubusercontent.com/IKEGAMI-99/AI-no-kimochi/main/dist/AI-no-kimochi-v0.3.1-debug.apk)
 
-GitHub Actions の **Android APK** workflow が `main` への push ごとに APK をビルドし、`dist/AI-no-kimochi-v0.3.0-debug.apk` を更新します。
+GitHub Actions の **Android APK** workflow が `main` への push ごとに APK をビルドし、`dist/AI-no-kimochi-v0.3.1-debug.apk` を更新します。
 
 ## Roadmap
 
