@@ -15,7 +15,7 @@ Transformer / LLM が文章を生成するまでの内部処理を、横スワ�
 - Self-Attentionの自己参照を `猫 → 猫` の縦線として可視化
 - 線を追うだけで、どのToken同士が結ばれているか分かる表示へ改善
 
-## v0.4.2 の主な変更
+## v0.4.1 の主な変更
 
 - 次Token候補を5個から15個へ拡張
 - Temperatureに加えて **Top-K** を追加
@@ -39,7 +39,7 @@ Tokenを多次元ベクトルへ変換する考え方を可視化します。近
 同じEmbeddingを別の学習済み行列で変換し、Query / Key / Value の役割を作ることを図解します。
 
 ### Self-Attention
-QueryとKeyからAttention Weightを作り、その重みでValueを混ぜる流れを表示します。自分自身へのAttentionも可視化します。
+QueryとKeyからAttention Weightを作り、その重みでValueを混ぜる流れを表示します。上段に参照先Token、下段に基準Tokenを表示し、自分自身へのAttentionも縦線で可視化します。
 
 ### FFN
 Attentionで集めた情報をTokenごとに加工する流れを表示します。
