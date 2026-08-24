@@ -5,6 +5,8 @@ on:
     branches: [ main ]
     paths-ignore:
       - 'dist/**'
+  pull_request:
+    branches: [ main ]
   workflow_dispatch:
 
 permissions:
@@ -36,7 +38,7 @@ jobs:
           gradle :app:assembleDebug --stacktrace 2>&1 | tee android-build.log
 
       - name: Publish build error log
-        if: steps.android_build.outcome == 'failure'
+        if: steps.android_build.outcome == 'failure' && github.event_name == 'push'
         run: |
           mkdir -p dist
           cp android-build.log dist/build-error-v0.2.1.txt
@@ -63,7 +65,7 @@ jobs:
           if-no-files-found: error
 
       - name: Publish APK to repository
-        if: steps.android_build.outcome == 'success'
+        if: steps.android_build.outcome == 'success' && github.event_name == 'push'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
