@@ -59,7 +59,11 @@ app/build/outputs/apk/debug/app-debug.apk
 
 ## APK
 
-GitHub Actions の **Android APK** workflow が `main` への push ごとに debug APK を生成し、Artifact `AI-no-kimochi-v0.1.0-debug` として保存します。
+### 直接ダウンロード
+
+[AI-no-kimochi v0.1.0 debug APK](https://raw.githubusercontent.com/IKEGAMI-99/AI-no-kimochi/main/dist/AI-no-kimochi-v0.1.0-debug.apk)
+
+GitHub Actions の **Android APK** workflow が `main` への push ごとに debug APK を生成します。ビルド成功後、Artifact `AI-no-kimochi-v0.1.0-debug` として保存すると同時に、`dist/AI-no-kimochi-v0.1.0-debug.apk` を更新します。
 
 ## 注意
 
