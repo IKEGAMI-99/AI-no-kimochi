@@ -1,12 +1,19 @@
 # AIのキモチ
 
-**Version 0.4.1**
+**Version 0.4.2**
 
 Transformer / LLM が文章を生成するまでの内部処理を、横スワイプで1ページずつ追いながら理解する Android 学習アプリです。
 
 ## 学習フロー
 
 `文章 → Token → Embedding → Q/K/V → Attention → FFN → 次Token予測 → AI用語辞典`
+
+## v0.4.2 の主な変更
+
+- Attention図の上段に参照先Token（Key）、下段に基準Token（Query）を直接表示
+- 線の始点・終点とToken名を同じ色で対応
+- Self-Attentionの自己参照を `猫 → 猫` の縦線として可視化
+- 線を追うだけで、どのToken同士が結ばれているか分かる表示へ改善
 
 ## v0.4.1 の主な変更
 
@@ -32,7 +39,7 @@ Tokenを多次元ベクトルへ変換する考え方を可視化します。近
 同じEmbeddingを別の学習済み行列で変換し、Query / Key / Value の役割を作ることを図解します。
 
 ### Self-Attention
-QueryとKeyからAttention Weightを作り、その重みでValueを混ぜる流れを表示します。自分自身へのAttentionも可視化します。
+QueryとKeyからAttention Weightを作り、その重みでValueを混ぜる流れを表示します。上段に参照先Token、下段に基準Tokenを表示し、自分自身へのAttentionも縦線で可視化します。
 
 ### FFN
 Attentionで集めた情報をTokenごとに加工する流れを表示します。
@@ -82,11 +89,11 @@ app/build/outputs/apk/debug/app-debug.apk
 
 ## APK
 
-### v0.4.1 直接ダウンロード
+### v0.4.2 直接ダウンロード
 
-[AI-no-kimochi v0.4.1 debug APK](https://raw.githubusercontent.com/IKEGAMI-99/AI-no-kimochi/main/dist/AI-no-kimochi-v0.4.1-debug.apk)
+[AI-no-kimochi v0.4.2 debug APK](https://raw.githubusercontent.com/IKEGAMI-99/AI-no-kimochi/main/dist/AI-no-kimochi-v0.4.2-debug.apk)
 
-GitHub Actions の **Android APK** workflow が `main` への push ごとに APK をビルドし、`dist/AI-no-kimochi-v0.4.1-debug.apk` を更新します。
+GitHub Actions の **Android APK** workflow が `main` への push ごとに APK をビルドし、`dist/AI-no-kimochi-v0.4.2-debug.apk` を更新します。
 
 ## Roadmap
 
