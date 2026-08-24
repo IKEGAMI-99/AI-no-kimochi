@@ -39,11 +39,11 @@ jobs:
         if: steps.android_build.outcome == 'failure'
         run: |
           mkdir -p dist
-          tail -n 220 android-build.log > dist/build-error-v0.2.0.txt
+          cp android-build.log dist/build-error-v0.2.0.txt
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add dist/build-error-v0.2.0.txt
-          git commit -m "ci: publish v0.2.0 build error [skip ci]" || true
+          git commit -m "ci: publish full v0.2.0 build error [skip ci]" || true
           git pull --rebase origin main
           git push
 
