@@ -1,0 +1,1 @@
+Trigger GitHub Actions build for AI-no-kimochi v0.2.1.
