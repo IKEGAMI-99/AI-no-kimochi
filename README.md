@@ -1,6 +1,6 @@
 # AIのキモチ
 
-**Version 0.4.0**
+**Version 0.4.1**
 
 Transformer / LLM が文章を生成するまでの内部処理を、横スワイプで1ページずつ追いながら理解する Android 学習アプリです。
 
@@ -8,27 +8,17 @@ Transformer / LLM が文章を生成するまでの内部処理を、横スワ�
 
 `文章 → Token → Embedding → Q/K/V → Attention → FFN → 次Token予測 → AI用語辞典`
 
-## v0.4.0 の主な変更
+## v0.4.1 の主な変更
 
-- 例文選択UIを廃止し、教材用の固定例文 `猫はソファで寝ている` に統一
-- BACK / NEXT ボタンを廃止
-- ページ移動を横スワイプ式へ変更
-- 上部ステップタブから任意ページへのジャンプも可能
-- 表示領域を拡大し、解説コンテンツへ使える縦スペースを増加
-- 最終ページに **AI用語辞典** を追加
-- 用語辞典はカテゴリ選択 → 用語カード → タップで詳細表示
-- 用語カテゴリ:
-  - 基礎概念
-  - モデル内部
-  - 学習・調整
-  - 推論・生成
-  - 検索・知識
-  - マルチモーダル
-  - 性能・運用
-  - 開発ツール
-  - 主要AI
-  - オープンウェイト
-- RAG / Vector DB / LoRA / RLHF / KV Cache / Quantization / Tool Calling など主要用語を収録
+- 次Token候補を5個から15個へ拡張
+- Temperatureに加えて **Top-K** を追加
+- **Top-P (Nucleus Sampling)** を追加
+- Sampling処理を `Temperature → Top-K → Top-P → 再正規化 → Sampling` の順で可視化
+- Top-K / Top-P で除外された候補は消さずにグレーアウト
+- 除外候補へ `Top-Kで除外` / `Top-Pで除外` を表示
+- 各候補に Temperature適用後の確率と、最終Sampling確率を表示
+- 現在Sampling対象になっているToken数をリアルタイム表示
+- AI用語辞典の推論・生成カテゴリに Logit / Sampling / Top-K / Top-P の説明を追加・強化
 
 ## 主な学習内容
 
@@ -47,11 +37,19 @@ QueryとKeyからAttention Weightを作り、その重みでValueを混ぜる流
 ### FFN
 Attentionで集めた情報をTokenごとに加工する流れを表示します。
 
-### Logits / Sampling
-Logit、Softmax、Temperature、Samplingを使って次Tokenが決まる流れを表示します。
+### Sampling
+次Token候補のLogitをTemperatureで確率へ変換し、Top-KとTop-Pで候補集合を絞ったあと、残った候補だけを再正規化して次Tokenを選ぶ流れを表示します。
 
 ### AI用語辞典
 AI関連用語をカテゴリ別に表示し、用語をタップすると詳細説明と関連語を確認できます。
+
+## UI
+
+- 教材用の固定例文 `猫はソファで寝ている`
+- BACK / NEXT ボタンなし
+- ページ移動は横スワイプ
+- 上部ステップタブから任意ページへジャンプ可能
+- 最終ページにカテゴリ別AI用語辞典
 
 ## 技術構成
 
@@ -68,7 +66,7 @@ AI関連用語をカテゴリ別に表示し、用語をタップすると詳細
 
 このアプリは巨大LLMそのものを端末で動かすものではありません。
 
-Token ID、Embedding、Q/K/V、Attention Weight、FFN内部値、Logits などには教育用の疑似値を含みます。概念の流れを理解するためのシミュレーションであり、実在モデルの内部値をそのまま再現するものではありません。
+Token ID、Embedding、Q/K/V、Attention Weight、FFN内部値、Logits、Sampling候補などには教育用の疑似値を含みます。概念の流れを理解するためのシミュレーションであり、実在モデルの内部値をそのまま再現するものではありません。
 
 ## ビルド
 
@@ -84,18 +82,17 @@ app/build/outputs/apk/debug/app-debug.apk
 
 ## APK
 
-### v0.4.0 直接ダウンロード
+### v0.4.1 直接ダウンロード
 
-[AI-no-kimochi v0.4.0 debug APK](https://raw.githubusercontent.com/IKEGAMI-99/AI-no-kimochi/main/dist/AI-no-kimochi-v0.4.0-debug.apk)
+[AI-no-kimochi v0.4.1 debug APK](https://raw.githubusercontent.com/IKEGAMI-99/AI-no-kimochi/main/dist/AI-no-kimochi-v0.4.1-debug.apk)
 
-GitHub Actions の **Android APK** workflow が `main` への push ごとに APK をビルドし、`dist/AI-no-kimochi-v0.4.0-debug.apk` を更新します。
+GitHub Actions の **Android APK** workflow が `main` への push ごとに APK をビルドし、`dist/AI-no-kimochi-v0.4.1-debug.apk` を更新します。
 
 ## Roadmap
 
 ### v0.4.x
 - Attention Heatmap
 - LayerごとのEmbedding比較
-- Top-K / Top-P
 - 用語検索
 - 用語お気に入り
 
